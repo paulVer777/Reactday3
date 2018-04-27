@@ -14,15 +14,18 @@ const styles = {
 };
 
 
-const Controls = (props) => (
+const Controls = ({onChangeHandler,newTaskValue,onClickHandler}) => (
 
     <Paper style={styles.paper}>
         <TextFiled
+            onChange={onChangeHandler}
+            value={newTaskValue}
             name={'new-task'}
             fullWidth={true}
             placeholder={'New Task'}
         />
         <RaisedButton
+            onClick={onClickHandler}
             primary={true}
             label={'ADD'}
             fullWidth={true}

@@ -12,8 +12,8 @@ class ToDo extends React.Component {
             {name:'Umyj samochod', uid:454545}
 
         ],
-        filterText:''
-
+        filterText:'',
+         newTask:""
     };
 
     deleteTask=(taskUid)=> {
@@ -26,11 +26,38 @@ class ToDo extends React.Component {
         )
     };
 
+    addTask=()=>{
+
+        const newTask={
+
+            name:this.state.newTask,
+            uid:Date.now()
+
+        }
+
+        const newTasks=this.state.tasks.concat(newTask)
+
+        this.setState({
+
+            tasks:newTasks
+        })
+    }
+
+    newTaskChangeHandler=(event, newValue)=> this.setState({
+
+       newTask: newValue
+
+    });
+
     render() {
 
         return (
             <div>
-                <Controls/>
+                <Controls
+                onClickHandler={this.addTask}
+               onChangeHandler={this.newTaskChangeHandler}
+                newTaskValue={this.state.newTask}
+                />
                 <List
 
                     deleteTaskFunction={this.deleteTask}
