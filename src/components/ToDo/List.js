@@ -1,17 +1,24 @@
 import React from 'react'
 import Task from './Task'
+import Container from "../UI/container";
 
 const List=({tasksList,deleteTaskFunction})=>(
-    <div>
+
+
+    <Container>
         {
-         tasksList.map(task=>(<Task
+         tasksList.map(task=>(
+
+
+             <Task
 
              name={task.name}
              key={task.uid}
              deleteTask={()=>deleteTaskFunction(task.uid)}
             />
+
          ))
         }
-    </div>
+    </Container>
 );
 export default  List
