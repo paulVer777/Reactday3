@@ -11,6 +11,8 @@ import CounterWithState from './components/CounterWithState'
 import Dashboard from './components/Dashboard'
 import Hello from './components/Hello'
 import SideBar from './components/SideBar'
+import ToDo from './components/ToDo'
+
 
 class App extends React.Component {
     state = {
@@ -36,9 +38,9 @@ class App extends React.Component {
                             isSideBarOpen={this.state.isDrawerOpen}
                         />
 
-                        <hr />
-
                         <Route exact path={'/'} component={Dashboard}/>
+                        <Route path={'/todo'} component={ToDo}/>
+
                         <Route path={'/hello/:name'} component={Hello}/>
                         <Route path={'/mappig-array'} component={MappingArray}/>
                         <Route path={'/mappig-array-2'} component={MappingArray2}/>

@@ -43,6 +43,30 @@ class CounterWithState extends React.Component {
 
     }
 
+    componentWillUpdate() {
+
+        console.log('Counter will be re-rendered')
+
+    }
+
+    componentDidUpdate() {
+
+        console.log('Counter is re-rendered')
+
+    }
+
+    componentWillReceiveProps() {
+
+        console.log('Counter will receive props')
+
+    }
+
+    shouldComponentUpdate() {
+
+        console.log('Should component update?')
+         return true
+    }
+
 
     // USING CLASS PROPERTIES - STAGE-2 - THIS IS NOT IN ES6 !!!
     // state = {
