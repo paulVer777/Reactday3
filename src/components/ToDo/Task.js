@@ -1,13 +1,26 @@
 import React from 'react'
 
+import MenuItem from 'material-ui/MenuItem'
+import Delete from 'material-ui/svg-icons/action/delete'
+
+
 
 const Task = ({name, deleteTask}) => (
 
-    <div>{name}
-        <button onClick={deleteTask}
-        >
-            x
-        </button>
-    </div>
-);
-export default Task
+    <MenuItem
+
+        primaryText={name}
+        rightIcon={
+
+            <Delete
+
+                onClick={deleteTask}
+            />
+        }
+
+    />
+
+
+)
+
+export default Task;
