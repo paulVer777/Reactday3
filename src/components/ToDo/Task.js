@@ -2,9 +2,18 @@ import React from 'react'
 
 
 
-const Task=(props)=>(
+const Task=({name,deleteTask})=>(
 
-    <div>Task</div>
+    <div>{name}
+    <button onClick={deleteTask}
+    >
+        x
+    </button>
+
+
+
+
+    </div>
 
 
 );

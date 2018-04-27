@@ -1,10 +1,22 @@
 import React from 'react'
+import Task from './Task'
 
 
+const List=({tasksList})=>(
 
-const List=(props)=>(
+    <div>
+        {
 
-    <div>List</div>
+         tasksList.map(task=>(<Task
+
+             name={task.name}
+             key={task.key}
+             deleteTask={()=>alert('Click')}
+            />
+         ))
+        }
+
+    </div>
 
 
 );
