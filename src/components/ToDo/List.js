@@ -1,26 +1,17 @@
 import React from 'react'
 import Task from './Task'
 
-
-const List=({tasksList})=>(
-
+const List=({tasksList,deleteTaskFunction})=>(
     <div>
         {
-
          tasksList.map(task=>(<Task
 
              name={task.name}
-             key={task.key}
-             deleteTask={()=>alert('Click')}
+             key={task.uid}
+             deleteTask={()=>deleteTaskFunction(task.uid)}
             />
          ))
         }
-
     </div>
-
-
 );
-
-
-
 export default  List

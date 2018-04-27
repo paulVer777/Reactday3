@@ -1,5 +1,6 @@
 import React from 'react'
 import List from './List'
+import Controls from './Controls'
 
 class ToDo extends React.Component {
 
@@ -7,22 +8,33 @@ class ToDo extends React.Component {
 
         tasks: [
 
-            {name:'Umyj naczynia', key:11231},
-            {name:'Umyj samochod', key:454545},
+            {name:'Umyj naczynia', uid:11231},
+            {name:'Umyj samochod', uid:454545}
 
         ],
         filterText:''
 
     };
 
+    deleteTask=(taskUid)=> {
 
+        const newTasks=this.state.tasks.filter(task=> taskUid !== task.uid)
+        this.setState(
+            {
+         tasks:newTasks
+            }
+        )
+    };
 
     render() {
 
         return (
             <div>
+                <Controls/>
                 <List
-                tasksList={this.state.tasks}
+
+                    deleteTaskFunction={this.deleteTask}
+                    tasksList={this.state.tasks}
                 />
             </div>
         )

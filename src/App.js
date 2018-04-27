@@ -13,7 +13,6 @@ import Hello from './components/Hello'
 import SideBar from './components/SideBar'
 import ToDo from './components/ToDo'
 
-
 class App extends React.Component {
     state = {
         isDrawerOpen: false
