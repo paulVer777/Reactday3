@@ -15,22 +15,30 @@ const styles = {
 };
 
 
-const Controls = ({onChangeHandler,newTaskValue,onClickHandler}) => (
+const Controls = (props) => (
 
     <Container>
         <TextFiled
-            onChange={onChangeHandler}
-            value={newTaskValue}
+            onChange={props.onChangeHandler}
+            value={props.newTaskValue}
             name={'new-task'}
             fullWidth={true}
             placeholder={'New Task'}
         />
         <RaisedButton
-            onClick={onClickHandler}
+            onClick={props.onClickHandler}
             primary={true}
             label={'ADD'}
             fullWidth={true}
         />
+        <TextFiled
+            onChange={props.onFilterChangeHandler}
+            value={props.filterTaskValue}
+            name={'filter-tasks'}
+            fullWidth={true}
+            placeholder={'Filter Tasks'}
+        />
+
     </Container>
 );
 

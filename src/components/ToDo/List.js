@@ -2,13 +2,15 @@ import React from 'react'
 import Task from './Task'
 import Container from "../UI/container";
 
-const List=({tasksList,deleteTaskFunction})=>(
+const List=({tasksList,deleteTaskFunction,filter})=>(
 
 
     <Container>
         {
-         tasksList.map(task=>(
 
+         tasksList
+             .filter(task => (task.name.toLowerCase().indexOf(filter.toLowerCase()) !==-1))
+             .map(task=>(
 
              <Task
 

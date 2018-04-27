@@ -3,8 +3,6 @@ import React from 'react'
 import MenuItem from 'material-ui/MenuItem'
 import Delete from 'material-ui/svg-icons/action/delete'
 
-
-
 const Task = ({name, deleteTask}) => (
 
     <MenuItem
@@ -17,10 +15,6 @@ const Task = ({name, deleteTask}) => (
                 onClick={deleteTask}
             />
         }
-
     />
-
-
-)
-
+);
 export default Task;
